@@ -17,9 +17,9 @@ pipeline {
         stage ("build"){
             steps {
                 script {
-                    def var
+                    gv.buildApp()
                 }
-                echo "building the application"
+             
             }
         }
           stage ("test"){
@@ -29,13 +29,16 @@ pipeline {
                 }
             }
             steps {
-                echo "testing the application"
+                script{
+                    gv.testApp()
+                }
             }
         }
           stage ("deploy"){
             steps {
-                echo "deploying the  application"
-                echo "deploying version ${VERSION}"
+                script{
+                    gv.deployApp()
+                }
             }
         }
     }
