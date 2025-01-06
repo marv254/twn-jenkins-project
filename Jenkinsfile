@@ -1,7 +1,6 @@
 
-@Library('jenkins-shared-lib')
+@Library('jenkins-shared-lib')_
 
-def gv
 
 pipeline {
     agent any 
@@ -21,7 +20,10 @@ pipeline {
         stage ("build image"){
             steps {
                 script {
-                    buildImage()
+                    buildImage('marv254/demo-app:jma-3.0')
+                    dockerLogin()
+                    dockerPush ('marv254/demo-app:jma-3.0')
+
                 }
              
             }
