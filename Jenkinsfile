@@ -35,6 +35,7 @@ pipeline {
             steps {
                 script{
                     echo "deploying the application..."
+                    echo "Testing webhooks"
                 }
             }
         }
