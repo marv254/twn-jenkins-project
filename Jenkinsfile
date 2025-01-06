@@ -1,7 +1,9 @@
 
-@Library('jenkins-shared-lib')_
-
-
+library identifier: 'jenkins-shared-library@master', retriever: modernSCM(
+    [$class: 'GitSCMSource',
+    remote: 'https://github.com/marv254/jenkins-shared-library.git',
+    credentialsId: 'github-creds']
+)
 pipeline {
     agent any 
     tools {
