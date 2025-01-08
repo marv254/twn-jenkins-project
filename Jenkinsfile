@@ -37,7 +37,7 @@ pipeline {
                         sh "docker push nanatwn/demo-app:${IMAGE_NAME}"
                 }
             }
-        }
+        }}
         stage('deploy') {
             steps {
                 script {
@@ -47,4 +47,4 @@ pipeline {
         }
         }
     }
-}
+
